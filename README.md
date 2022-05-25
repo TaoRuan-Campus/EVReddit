@@ -5,13 +5,16 @@ The raw data for Reddit submission (RS) and Reddit Comments (RC) are from the Pu
 
 Following the data filtering steps described in the manuscript, we provide the secondary Reddit data which is directly related to Electric vehicle (EV) discussions. They are stored as monthly dataset in the RS and RC folders. The overall Reddit comment dataset is also given with the name "df_reddit_extend.pkl", which merges all the monthly Reddit comments in RC folder.
 
-Other necessary secondary data for the replication can also be found here with .pkl format. You can easily look into all the secondary data by using Pandas Python package and one exmple is shown below:
+Other necessary secondary data for the replication can also be found with .pkl format. You can easily look into all the secondary data by using Pandas Python package and one exmple is shown below:
 
 ```python
 import pandas as pd
 df_reddit_extend = pd.read_pickle("df_reddit_extend.pkl")
 df_reddit_extend.head()
 ```
+
+The code for replication of main results is written with Python and can be found in the Reddit_Replication.ipynb file. This is a jupyter notebook (https://jupyter.org) file. If you want to run the file on your local machine, you need to install jupyter notebook and all other required packages in the requirements.txt file.
+
 
 
 
