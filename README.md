@@ -9,6 +9,6 @@ This is the replication package required by COMMTR for the article "Public Perce
 
 
 
-Any data that resides in a this GitHub repository is controlled and owned by the University of Colorado Boulder
+Any data that resides in a this GitHub repository is controlled and owned by the University of Colorado Boulder.
 
 
