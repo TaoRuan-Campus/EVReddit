@@ -15,9 +15,9 @@ df_reddit_extend.head()
 
 Explanation of important secondary data:
 
-_df_reddit_extend.pkl_: The merged Reddit comments that are related with EV and are filtered from raw data.
+**_df_reddit_extend.pkl_**: The merged Reddit comments that are related with EV and are filtered from raw data.
 
-_ldamallet.gensim_: The topic model generated with the wrapper for Mallet LDA in the Gensim Python toolkit.
+**_ldamallet.gensim_**: The topic model generated with the wrapper for Mallet LDA in the Gensim Python toolkit.
 
 
 The code for replication of main results is written with Python and can be found in the Reddit_Replication.ipynb file. This is a jupyter notebook (https://jupyter.org) file. If you want to run the file on your local machine, you need to install jupyter notebook and all other required packages in the requirements.txt file.
