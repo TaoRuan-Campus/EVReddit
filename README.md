@@ -1,10 +1,12 @@
 # Replication_COMMTR
 This is the replication package required by COMMTR for the article "Public Perception of Electric Vehicles on Reddit over the Past Decade".
 
+# Raw data
 The raw data for Reddit submission (RS) and Reddit Comments (RC) are from the Pushshift database (https://files.pushshift.io/reddit/), which contain all the data from Reddit platform. This raw dataset is too large to upload here, but you could download them from Pushshift directly. 
 
 Following the data filtering steps described in the manuscript, we provide the secondary Reddit data which is directly related to Electric vehicle (EV) discussions. They are stored as monthly dataset in the RS and RC folders. The overall Reddit comment dataset is also given with the name "df_reddit_extend.pkl", which merges all the monthly Reddit comments in RC folder.
 
+# Secondary data
 Other necessary secondary data for the replication can also be found with .pkl format. You can easily look into all the secondary data by using Pandas Python package and one exmple is shown below:
 
 ```python
@@ -31,6 +33,7 @@ Explanation of important secondary data:
 
 **_dic_subredditVADER.pkl_**: A dictonary file for the sentiment scores of all the posts in different subreddits to perform the subreddit clustering. We selected the top subreddits for EV discussion as described in the paper, the collection of all the sentiment scores in each subreddit took very long time and we stored the results in this file. The replication is easy since you only need to extract all the posts from each subreddit and calculate the sentiment scores of the posts.
 
+# Code
 The code for replication of main results is written with Python and can be found in the Reddit_Replication.ipynb file. This is a jupyter notebook (https://jupyter.org) file. If you want to run the file on your local machine, you need to install jupyter notebook and all other required packages in the requirements.txt file.
 
 
