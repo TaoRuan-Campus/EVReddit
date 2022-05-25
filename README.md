@@ -14,7 +14,7 @@ df_reddit_extend.head()
 ```
 
 Explanation of important secondary data:
-'''df_reddit_extend.pkl'''
+_df_reddit_extend.pkl_
 
 The code for replication of main results is written with Python and can be found in the Reddit_Replication.ipynb file. This is a jupyter notebook (https://jupyter.org) file. If you want to run the file on your local machine, you need to install jupyter notebook and all other required packages in the requirements.txt file.
 
