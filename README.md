@@ -42,6 +42,8 @@ The code for replication of main results is written with Python and can be found
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
+ 
+d = pd.date_range(start='1/1/2011', end='12/31/2020', freq='MS') 
 
 fig, ax1 = plt.subplots(figsize=(10,6))
 color = 'tab:blue'
