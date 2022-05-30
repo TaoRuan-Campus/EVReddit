@@ -30,7 +30,7 @@ Explanation of important secondary data:
 **_dic_subredditVADER.pkl_**: A dictonary file for the sentiment scores of all the posts in different subreddits to perform the subreddit clustering. We selected the top subreddits for EV discussion as described in the paper, the collection of all the sentiment scores in each subreddit took very long time and we stored the results in this file. The replication is easy since you only need to extract all the posts from each subreddit and calculate the sentiment scores of the posts.
 
 ## Code
-The code for replication of main results is written with Python and can be found in the Reddit_Replication.ipynb file. This is a jupyter notebook (https://jupyter.org) file. You can download and check the code on your local machine. We have some headlines in the notebook to lead you to the visualization code. For example, after following the filtering steps in our manuscript then you are able to obtain the monthly Reddit comments and Reddit submissions. With the code below presented in the _1.1  Monthly RC/RS (log) count_ section, you are able to generate the exact **Figure 2** in the paper. 
+The code for replication of main results is written with Python and can be found in the Reddit_Replication.ipynb file. This is a jupyter notebook (https://jupyter.org) file. You can download and check the code on your local machine. We have some headlines in the notebook to lead you to the visualization code. For example, after following the filtering steps in our manuscript then you are able to obtain the monthly Reddit comments and Reddit submissions. With the code below presented in the **_1.1  Monthly RC/RS (log) count_** section, you are able to generate the exact **Figure 2** in the paper. 
 
 ```python
 import pandas as pd
