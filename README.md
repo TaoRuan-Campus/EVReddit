@@ -15,7 +15,7 @@ df_reddit_extend = pd.read_pickle("df_reddit_extend.pkl")
 df_reddit_extend.head()
 ```
 
-Explanation of important secondary data (**NOTE: we are sorry that we cannot provide all the secondary data in this repository but we provided a sample dataset for each of the secondary data. However, with the raw data and the processing steps in our manuscript, the audience can easily reproduce the full secondary data**):
+Explanation of important secondary data (**NOTE: We cannot provide all the secondary data in this repository but we present a sample dataset for each secondary data. However, with the raw data and the processing steps in our manuscript, the audience can easily reproduce the full secondary data**):
 
 **_df_reddit_extend.pkl_**: The merged Reddit comments that are related with EV and are filtered from raw data.
 
