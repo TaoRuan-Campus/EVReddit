@@ -29,7 +29,7 @@ Explanation of important secondary data (**NOTE: We cannot provide all the secon
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer 
 sid_obj = SentimentIntensityAnalyzer()
 get_VADER = lambda _:sid_obj.polarity_scores(_)['compound']
-vader_df_topic_sents_keywords = list(pd.read_pickle("df_sentence_dataready.pkl").body.apply(lambda _:get_VADER(_)).values)
+vader_df_topic_sents_keywords = pd.read_pickle("df_sentence_dataready.pkl").body.apply(lambda _:get_VADER(_))
 ```
 
 **_monthlyafinn.pkl, monthlyVADER.pkl_**: Similar to the **_vader_df_topic_sents_keywords.pkl_**, we calculated the monthly average AFINN and VADER sentiment scores in the **_df_sentence_dataready_**. The calculation process is similar and we stored the results to save time.
