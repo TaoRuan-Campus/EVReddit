@@ -23,9 +23,16 @@ Explanation of important secondary data (**NOTE: We cannot provide all the secon
 
 **_df_sentence_dataready_**: After tranditional data preprocessing described in the manuscript, some very short comments would be removed and the remaining Reddit comments from **_df_reddit_extend.pkl_** will be converted to this file. We need this dataset to combine the topic modeling and sentiment analysis
 
-**_vader_df_topic_sents_keywords.pkl_**: This dataset contains the VADER sentiment score for each post in the **_df_sentence_dataready_**. The calculation process is contained in the code but this process took very long time so we stored the results to save time.
+**_vader_df_topic_sents_keywords.pkl_**: This dataset contains the VADER sentiment score for each post in the **_df_sentence_dataready_**. The calculation process is contained in the code but this process took very long time so we stored the results to save time. This can be easily obtained with the following code:
 
-**_monthlyafinn.pkl, monthlyVADER.pkl_**: Similar to the **_vader_df_topic_sents_keywords.pkl_**, we calculated the monthly average AFINN and VADER sentiment scores in the **_df_sentence_dataready_**. The calculation process is also contained in the code and we stored the results to save time.
+```python
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer 
+sid_obj = SentimentIntensityAnalyzer()
+get_VADER = lambda _:sid_obj.polarity_scores(_)['compound']
+vader_df_topic_sents_keywords = list(pd.read_pickle("df_sentence_dataready.pkl").body.apply(lambda _:get_VADER(_)).values)
+```
+
+**_monthlyafinn.pkl, monthlyVADER.pkl_**: Similar to the **_vader_df_topic_sents_keywords.pkl_**, we calculated the monthly average AFINN and VADER sentiment scores in the **_df_sentence_dataready_**. The calculation process is similar and we stored the results to save time.
 
 **_dic_subredditVADER.pkl_**: A dictonary file for the sentiment scores of all the posts in different subreddits to perform the subreddit clustering. We selected the top subreddits for EV discussion as described in the paper, the collection of all the sentiment scores in each subreddit took very long time and we stored the results in this file. The replication is easy since you only need to extract all the posts from each subreddit and calculate the sentiment scores of the posts.
 
