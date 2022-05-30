@@ -27,17 +27,37 @@ Explanation of important secondary data:
 
 **_monthlyafinn.pkl, monthlyVADER.pkl_**: Similar to the **_vader_df_topic_sents_keywords.pkl_**, we calculated the monthly average AFINN and VADER sentiment scores in the **_df_sentence_dataready_**. The calculation process is also contained in the code and we stored the results to save time.
 
-**_monthlyPolarity.pkl, monthlySubjectivity.pkl_**: Another commonly used sentiment score calculated from Python textblob package, we did not present the results in the manuscript but added here as another reference. 
-
-**_LIWC2015_Results_df_reddit_extend.csv_**:Another commonly used sentiment score calculated from LIWC2015 software, we did not present the results in the manuscript but added here as another reference.. As showed in the jupyter notenook, all the monthly sentiment scores are highly consistent.
-
 **_dic_subredditVADER.pkl_**: A dictonary file for the sentiment scores of all the posts in different subreddits to perform the subreddit clustering. We selected the top subreddits for EV discussion as described in the paper, the collection of all the sentiment scores in each subreddit took very long time and we stored the results in this file. The replication is easy since you only need to extract all the posts from each subreddit and calculate the sentiment scores of the posts.
 
 ## Code
-The code for replication of main results is written with Python and can be found in the Reddit_Replication.ipynb file. This is a jupyter notebook (https://jupyter.org) file. If you want to run the file on your local machine, you need to install jupyter notebook and all other required packages in the requirements.txt file.
+The code for replication of main results is written with Python and can be found in the Reddit_Replication.ipynb file. This is a jupyter notebook (https://jupyter.org) file. You can download and check the code on your local machine. We have some headlines in the notebook to lead you to the visualization code. For example, after following the filtering steps in our manuscript then you are able to obtain the monthly Reddit comments and Reddit submissions. With the code below presented in the _1.1  Monthly RC/RS (log) count_ section, you are able to generate the exact **Figure 2** in the paper. 
 
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
 
+fig, ax1 = plt.subplots(figsize=(10,6))
+color = 'tab:blue'
+lns1 = ax1.plot_date(d[:112], monthly_RS[:112],linestyle='-',c=color,label='EV Reddit Submissions')
+ax1.set_xlabel('Year', fontsize= 20)
+ax1.set_ylabel('# of Submissions', color=color, fontsize= 20)
+ax1.tick_params(axis='y', labelcolor=color, labelsize= 13)
 
+ax2 = ax1.twinx()
+color = 'deeppink'
+lns2 = ax2.plot_date(d[:112], monthly_RC[:112],linestyle='-.',c=color,label='EV Reddit Comments')
+ax2.set_ylabel('# of Comments', color=color, fontsize= 20)
+ax2.tick_params(axis='y', labelcolor=color, labelsize= 13)
+
+ax1.tick_params(axis='x', labelsize= 15) 
+# added these two lines
+lns = lns1+lns2
+labs = [l.get_label() for l in lns]
+ax1.legend(lns, labs, prop={'size': 15},loc=0)
+#plt.xticks(x,df_curr['Date'])
+plt.title('EV-related Submissions and Comments on Reddit in 2011-2020', size=15)
+plt.show()
+```
 
 Any data that resides in a this GitHub repository is controlled and owned by the University of Colorado Boulder.
 
